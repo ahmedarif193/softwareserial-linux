@@ -7,7 +7,6 @@ LINUX = /usr/src/linux-headers-$(RELEASE)
 
 ccflags-y := -std=gnu11
 
-
 all:
 	$(MAKE) -C $(LINUX) M=$(PWD) modules
 

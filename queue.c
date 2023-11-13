@@ -4,11 +4,11 @@
  * Initializes a given queue.
  * @param queue given queue
  */
-void initialize_queue(struct queue* queue)
+void initialize_queue(struct queue *queue)
 {
-  queue->size  = 0;
+  queue->size = 0;
   queue->front = 0;
-  queue->rear  = 0;
+  queue->rear = 0;
 }
 
 /**
@@ -17,7 +17,7 @@ void initialize_queue(struct queue* queue)
  * @param character given character
  * @return 1 if the character is added to the queue. 0 if the queue is full.
  */
-int enqueue_character(struct queue* queue, const unsigned char character)
+int enqueue_character(struct queue *queue, const unsigned char character)
 {
   int success = 0;
   if (queue->size < QUEUE_MAX_SIZE)
@@ -48,7 +48,7 @@ int enqueue_character(struct queue* queue, const unsigned char character)
  * @param character a character
  * @return 1 if a character is fetched from the queue. 0 if the queue is empy.
  */
-int dequeue_character(struct queue* queue, unsigned char* character)
+int dequeue_character(struct queue *queue, unsigned char *character)
 {
   int success = 0;
   if (queue->size > 0)
@@ -72,7 +72,7 @@ int dequeue_character(struct queue* queue, unsigned char* character)
  * @param string_size size of the given string
  * @return The amount of characters successfully added to the queue.
  */
-int enqueue_string(struct queue* queue, const unsigned char* string, int string_size)
+int enqueue_string(struct queue *queue, const unsigned char *string, int string_size)
 {
   int n = 0;
   while (n < string_size && enqueue_character(queue, string[n]))
@@ -86,7 +86,7 @@ int enqueue_string(struct queue* queue, const unsigned char* string, int string_
  * Gets the number of characters that can be added to a given queue.
  * @return number of characters.
  */
-int get_queue_room(struct queue* queue)
+int get_queue_room(struct queue *queue)
 {
   return QUEUE_MAX_SIZE - queue->size;
 }
@@ -95,8 +95,7 @@ int get_queue_room(struct queue* queue)
  * Gets the number of characters contained in a given queue.
  * @return number of characters.
  */
-int get_queue_size(struct queue* queue)
+int get_queue_size(struct queue *queue)
 {
   return queue->size;
 }
-
