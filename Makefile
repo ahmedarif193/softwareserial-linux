@@ -5,6 +5,9 @@ soft_uart-objs := module.o raspberry_soft_uart.o queue.o
 RELEASE = $(shell uname -r)
 LINUX = /usr/src/linux-headers-$(RELEASE)
 
+ccflags-y := -std=gnu11
+
+
 all:
 	$(MAKE) -C $(LINUX) M=$(PWD) modules
 
